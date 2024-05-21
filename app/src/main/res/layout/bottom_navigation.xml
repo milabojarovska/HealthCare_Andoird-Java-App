@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_meal"
+        android:icon="@drawable/meal"
+        android:title="@string/add_meal" />
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/dashboard"
+        android:title="@string/dashboard" />
+    <item
+        android:id="@+id/navigation_activity"
+        android:icon="@drawable/run"
+        android:title="@string/add_activity" />
+</menu>

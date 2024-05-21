@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+  <!-- View with background color -->
+  <View
+      android:id="@+id/view"
+      android:layout_width="match_parent"
+      android:layout_height="140dp"
+      android:background="#40FC23"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="MissingConstraints" />
+
+  <!-- TextView inside the View -->
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:text="Your Activities of the day"
+      android:fontFamily="sans-serif-medium"
+      android:textColor="#FFFFFF"
+      android:textSize="22sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <!-- Circular CardView centered in its row -->
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardViewActivity"
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="65dp"
+      android:layout_marginEnd="24dp"
+      app:cardCornerRadius="75dp"
+      app:cardElevation="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/view">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="155dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true"
+          android:text="500 Cal"
+          android:textSize="18dp" />
+    </RelativeLayout>
+  </androidx.cardview.widget.CardView>
+
+  <!-- Second CardView below the second one -->
+  <androidx.cardview.widget.CardView
+      android:id="@+id/cardView3Activity"
+      android:layout_width="match_parent"
+      android:layout_height="200dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_marginTop="32dp"
+      app:cardCornerRadius="20dp"
+      app:cardElevation="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/cardViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+      <!-- Vertical line in yellow color -->
+      <View
+          android:layout_width="2dp"
+          android:layout_height="match_parent"
+          android:background="#FFD93F" />
+
+      <!-- Rest of the content inside another LinearLayout -->
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:orientation="vertical"
+          android:paddingStart="8dp"> <!-- Padding to separate from the line -->
+
+        <!-- Header Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="Activity"
+              android:textSize="20sp"
+              android:textStyle="bold"/>
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Burned Calories"
+              android:textSize="20sp"
+              android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- Activity Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+          <EditText
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="Running"
+              android:background="@drawable/edittext_no_underline"
+              android:textSize="16sp"/>
+          <EditText
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="300 Cal"
+              android:background="@drawable/edittext_no_underline"
+              android:textSize="16sp"/>
+        </LinearLayout>
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </androidx.cardview.widget.CardView>
+
+
+  <Button
+      android:id="@+id/add_button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Save"
+      android:textColor="#FFFFFF"
+      android:backgroundTint="#40FC23"
+      android:padding="12dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginBottom="16dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_gravity="center_horizontal"
+      android:gravity="center"
+      android:fontFamily="sans-serif"
+      android:textSize="16sp"
+      android:layout_marginHorizontal="24dp"
+      android:layout_marginVertical="16dp"
+
+      app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5" />
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:id="@+id/bottom_navigation"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@android:color/white"
+      app:menu="@layout/bottom_navigation"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"/>
+  </androidx.constraintlayout.widget.ConstraintLayout>
