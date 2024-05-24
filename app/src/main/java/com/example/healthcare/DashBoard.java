@@ -66,12 +66,12 @@ public class DashBoard extends AppCompatActivity {
         } else {
             while (cursor.moveToNext()) {
                 mealId.add(cursor.getString(0));
-                breakfastInput.add(cursor.getString(1));
-                lunchInput.add(cursor.getString(2));
-                dinnerInput.add(cursor.getString(3));
-                breakfastCalInput.add(cursor.getString(4));
-                lunchCalInput.add(cursor.getString(5));
-                dinnerCalInput.add(cursor.getString(6));
+                breakfastInput.add(cursor.getString(3));
+                lunchInput.add(cursor.getString(4));
+                dinnerInput.add(cursor.getString(5));
+                breakfastCalInput.add(cursor.getString(6));
+                lunchCalInput.add(cursor.getString(7));
+                dinnerCalInput.add(cursor.getString(8));
             }
         }
     }

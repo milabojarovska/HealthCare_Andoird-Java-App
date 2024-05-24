@@ -45,7 +45,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.breakfastCalInput_txt.setText(String.valueOf(breakfastCalInput.get(position)));
         holder.lunchCalInput_txt.setText(String.valueOf(lunchCalInput.get(position)));
         holder.dinnerCalInput_txt.setText(String.valueOf(dinnerCalInput.get(position)));
+
+        int breakfastCalories = parseCalories(String.valueOf(breakfastCalInput.get(position)));
+        int lunchCalories = parseCalories(String.valueOf(lunchCalInput.get(position)));
+        int dinnerCalories = parseCalories(String.valueOf(dinnerCalInput.get(position)));
+
+        int totalCalories = breakfastCalories + lunchCalories + dinnerCalories;
+        holder.max_calories.setText("Max Calories: " + totalCalories + " Cal");
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -53,7 +62,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView mealId_txt,breakfastInput_txt,lunchInput_txt,dinnerInput_txt,breakfastCalInput_txt,lunchCalInput_txt,dinnerCalInput_txt;
+        TextView mealId_txt,breakfastInput_txt,lunchInput_txt,dinnerInput_txt,breakfastCalInput_txt,lunchCalInput_txt,dinnerCalInput_txt,max_calories;
 
 
         @SuppressLint("WrongViewCast")
@@ -66,6 +75,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
             breakfastCalInput_txt= itemView.findViewById(R.id.breakfastCalInput_txt);
             lunchCalInput_txt= itemView.findViewById(R.id.lunchCalInput_txt);
             dinnerCalInput_txt= itemView.findViewById(R.id.dinnerCalInput_txt);
+            max_calories= itemView.findViewById(R.id.max_calories);
         }
+    }
+
+    private int parseCalories(String calorieText) {
+        return Integer.parseInt(calorieText.split(" ")[0]);
     }
 }
