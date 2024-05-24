@@ -50,40 +50,6 @@
             android:inputType="textPassword"
             android:id="@+id/password_input"/>
 
-        <!-- New LinearLayout for height and weight EditTexts -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Height"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:textSize="20sp"
-                android:background="@drawable/rounded_corners"
-                android:padding="18dp"
-                android:inputType="numberDecimal"
-                android:id="@+id/height_input"/>
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:hint="Weight"
-                android:textColor="#ffffff"
-                android:textColorHint="#ffffff"
-                android:textSize="20sp"
-                android:background="@drawable/rounded_corners"
-                android:padding="18dp"
-                android:inputType="numberDecimal"
-                android:id="@+id/weight_input"/>
-        </LinearLayout>
 
 
         <Button

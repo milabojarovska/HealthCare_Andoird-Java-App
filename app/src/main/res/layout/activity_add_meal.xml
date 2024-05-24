@@ -17,21 +17,46 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <!-- TextView inside the View -->
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <!-- Height and Weight input fields -->
+    <LinearLayout
+        android:id="@+id/height_weight_container"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Your Meals of the day"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        android:layout_marginHorizontal="16dp">
+
+        <EditText
+            android:id="@+id/height_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Height"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="16sp"
+            android:background="@drawable/rounded_corners"
+            android:padding="10dp"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/weight_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:hint="Weight"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:textSize="16sp"
+            android:background="@drawable/rounded_corners"
+            android:padding="10dp"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
 
     <!-- Circular CardView centered in its row -->
     <androidx.cardview.widget.CardView
@@ -108,6 +133,7 @@
                     android:orientation="horizontal">
 
                     <EditText
+                        android:id="@+id/breakfastInput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -116,6 +142,7 @@
                         android:textSize="16sp" />
 
                     <EditText
+                        android:id="@+id/breakfastCalInput"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/edittext_no_underline"
@@ -177,6 +204,7 @@
                     android:orientation="horizontal">
 
                     <EditText
+                        android:id="@+id/lunchInput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -185,6 +213,7 @@
                         android:textSize="16sp" />
 
                     <EditText
+                        android:id="@+id/lunchCalInput"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/edittext_no_underline"
@@ -245,6 +274,7 @@
                     android:orientation="horizontal">
 
                     <EditText
+                        android:id="@+id/dinnerInput"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -252,6 +282,7 @@
                         android:background="@drawable/edittext_no_underline"
                         android:textSize="16sp"/>
                     <EditText
+                        android:id="@+id/dinnerCalInput"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="200 Cal"
